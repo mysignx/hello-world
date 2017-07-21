@@ -48,7 +48,7 @@ public class Hello extends HttpServlet {
 			Statement stm = conn.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM DEP_DETAILS_VIEW");
 			response.getWriter().append(getRsTable(rs));
-			response.getWriter().append("<br/>Printed at:"+new Date());
+			response.getWriter().append("<br/>Printed at:");
 			rs.close();
 			stm.close();
 			conn.close();
