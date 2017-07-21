@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,6 +48,7 @@ public class Hello extends HttpServlet {
 			Statement stm = conn.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM DEP_DETAILS_VIEW");
 			response.getWriter().append(getRsTable(rs));
+			response.getWriter().append("<br/>Printed at:"+new Date());
 			rs.close();
 			stm.close();
 			conn.close();
